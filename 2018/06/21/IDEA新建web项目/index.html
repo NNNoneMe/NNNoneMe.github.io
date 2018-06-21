@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="IDEA,新建web项目," />
+  <meta name="keywords" content="IDEA,JavaWeb,教程," />
 
 
 
@@ -79,16 +79,31 @@
 
 
 
-<meta name="keywords" content="IDEA,新建web项目">
+<meta name="description" content="写在前面的话从学习java到JavaWeb，之前一直使用的是eclipse。后来转到IDEA这个工具，发现有很多地方与eclipse不同的地方。作为一个喜欢鼓捣的程序员，遇到问题时，我向来是迎难而上的。虽然在写这篇文章之前就用过这个工具，但每一次创建一个JavaWeb项目时，总会碰到这样那样的问题。此文作为自己使用IDEA创建一个web项目的记录，方便自己查看，以免每次都要百度，而且看到的教程都">
+<meta name="keywords" content="IDEA,JavaWeb,教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IDEA新建web项目">
+<meta property="og:title" content="IDEA开始一个Java web项目">
 <meta property="og:url" content="http://yoursite.com/2018/06/21/IDEA新建web项目/index.html">
 <meta property="og:site_name" content="NNNoneMe&#39;s blog">
+<meta property="og:description" content="写在前面的话从学习java到JavaWeb，之前一直使用的是eclipse。后来转到IDEA这个工具，发现有很多地方与eclipse不同的地方。作为一个喜欢鼓捣的程序员，遇到问题时，我向来是迎难而上的。虽然在写这篇文章之前就用过这个工具，但每一次创建一个JavaWeb项目时，总会碰到这样那样的问题。此文作为自己使用IDEA创建一个web项目的记录，方便自己查看，以免每次都要百度，而且看到的教程都">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/idea创建web项目.png">
-<meta property="og:updated_time" content="2018-06-21T12:52:47.850Z">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/创建web项目.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/文件夹路径设置.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/lib配置.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/lib完成.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/配置路径.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置1.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置2.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置3.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置4.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置5.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/tomcat配置6.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/完成.png">
+<meta property="og:updated_time" content="2018-06-21T13:15:53.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IDEA新建web项目">
+<meta name="twitter:title" content="IDEA开始一个Java web项目">
+<meta name="twitter:description" content="写在前面的话从学习java到JavaWeb，之前一直使用的是eclipse。后来转到IDEA这个工具，发现有很多地方与eclipse不同的地方。作为一个喜欢鼓捣的程序员，遇到问题时，我向来是迎难而上的。虽然在写这篇文章之前就用过这个工具，但每一次创建一个JavaWeb项目时，总会碰到这样那样的问题。此文作为自己使用IDEA创建一个web项目的记录，方便自己查看，以免每次都要百度，而且看到的教程都">
 <meta name="twitter:image" content="http://yoursite.com/2018/06/21/IDEA新建web项目/idea创建web项目.png">
 
 
@@ -125,7 +140,7 @@
 
 
 
-  <title>IDEA新建web项目 | NNNoneMe's blog</title>
+  <title>IDEA开始一个Java web项目 | NNNoneMe's blog</title>
   
 
 
@@ -279,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">IDEA新建web项目</h1>
+          <h1 class="post-title" itemprop="name headline">IDEA开始一个Java web项目</h1>
         
 
         <div class="post-meta">
@@ -329,8 +344,22 @@
       
 
       
-        <div style="width:450px"><img src="/2018/06/21/IDEA新建web项目/idea创建web项目.png" alt=""></div>
-
+        <blockquote>
+<h3 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h3><p>从学习java到JavaWeb，之前一直使用的是eclipse。后来转到IDEA这个工具，发现有很多地方与eclipse不同的地方。作为一个喜欢鼓捣的程序员，遇到问题时，我向来是迎难而上的。虽然在写这篇文章之前就用过这个工具，但每一次创建一个JavaWeb项目时，总会碰到这样那样的问题。此文作为自己使用IDEA创建一个web项目的记录，方便自己查看，以免每次都要百度，而且看到的教程都不一样，导致我难以记住。索性自己写一篇这样的教程，方便自己查看。</p>
+</blockquote>
+<h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><h4 id="选择New-Project，然后按图依次选择"><a href="#选择New-Project，然后按图依次选择" class="headerlink" title="选择New Project，然后按图依次选择"></a>选择<code>New Project</code>，然后按图依次选择</h4><p><img src="/2018/06/21/IDEA新建web项目/idea创建web项目.png" alt=""></p>
+<h4 id="创建完成后，得到如下图项目结构，在WEB-INF下创建classes和lib文件夹"><a href="#创建完成后，得到如下图项目结构，在WEB-INF下创建classes和lib文件夹" class="headerlink" title="创建完成后，得到如下图项目结构，在WEB-INF下创建classes和lib文件夹"></a>创建完成后，得到如下图项目结构，在<code>WEB-INF</code>下创建<code>classes</code>和<code>lib</code>文件夹</h4><p><img src="/2018/06/21/IDEA新建web项目/创建web项目.png" alt=""></p>
+<h4 id="配置lib包路径，操作如图"><a href="#配置lib包路径，操作如图" class="headerlink" title="配置lib包路径，操作如图"></a>配置<code>lib</code>包路径，操作如图</h4><p><img src="/2018/06/21/IDEA新建web项目/文件夹路径设置.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/lib配置.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/lib完成.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/配置路径.png" alt=""></p>
+<h4 id="tomcat配置"><a href="#tomcat配置" class="headerlink" title="tomcat配置"></a>tomcat配置</h4><p><img src="/2018/06/21/IDEA新建web项目/tomcat配置1.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/tomcat配置2.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/tomcat配置3.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/tomcat配置4.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/tomcat配置5.png" alt=""></p>
+<p><img src="/2018/06/21/IDEA新建web项目/tomcat配置6.png" alt=""></p>
+<h4 id="大功告成！！"><a href="#大功告成！！" class="headerlink" title="大功告成！！"></a>大功告成！！</h4><p><img src="/2018/06/21/IDEA新建web项目/完成.png" alt=""></p>
 
       
     </div>
@@ -350,7 +379,9 @@
           
             <a href="/tags/IDEA/" rel="tag"># IDEA</a>
           
-            <a href="/tags/新建web项目/" rel="tag"># 新建web项目</a>
+            <a href="/tags/JavaWeb/" rel="tag"># JavaWeb</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
           
         </div>
       
@@ -423,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,7 +496,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -479,6 +519,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面的话"><span class="nav-number">1.</span> <span class="nav-text">写在前面的话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始吧"><span class="nav-number">2.</span> <span class="nav-text">开始吧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择New-Project，然后按图依次选择"><span class="nav-number">2.1.</span> <span class="nav-text">选择New Project，然后按图依次选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建完成后，得到如下图项目结构，在WEB-INF下创建classes和lib文件夹"><span class="nav-number">2.2.</span> <span class="nav-text">创建完成后，得到如下图项目结构，在WEB-INF下创建classes和lib文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置lib包路径，操作如图"><span class="nav-number">2.3.</span> <span class="nav-text">配置lib包路径，操作如图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tomcat配置"><span class="nav-number">2.4.</span> <span class="nav-text">tomcat配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大功告成！！"><span class="nav-number">2.5.</span> <span class="nav-text">大功告成！！</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

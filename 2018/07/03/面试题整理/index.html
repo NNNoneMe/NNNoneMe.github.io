@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="javaSE部分1.简单讲一下java跨平台原理由于各操作系统支持的指令集（或者是实现原理）不是完全一致的，就会让我们的程序在不同的的操作系统上执行不同的代码。java开发了使用与不同操作系统的java虚拟机来屏蔽各个系统之间的差异，提供了统一的接口，对于开发者而言，只要在不同的系统上安装对应的java虚拟机，编程时遵循java的规范，就可以实现在所有操作系统上运java程序了。 2.讲一下jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题整理">
+<meta property="og:url" content="https://nnnoneme.cn/2018/07/03/面试题整理/index.html">
+<meta property="og:site_name" content="NNNoneMe&#39;s blog">
+<meta property="og:description" content="javaSE部分1.简单讲一下java跨平台原理由于各操作系统支持的指令集（或者是实现原理）不是完全一致的，就会让我们的程序在不同的的操作系统上执行不同的代码。java开发了使用与不同操作系统的java虚拟机来屏蔽各个系统之间的差异，提供了统一的接口，对于开发者而言，只要在不同的系统上安装对应的java虚拟机，编程时遵循java的规范，就可以实现在所有操作系统上运java程序了。 2.讲一下jav">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-03T03:51:15.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题整理">
+<meta name="twitter:description" content="javaSE部分1.简单讲一下java跨平台原理由于各操作系统支持的指令集（或者是实现原理）不是完全一致的，就会让我们的程序在不同的的操作系统上执行不同的代码。java开发了使用与不同操作系统的java虚拟机来屏蔽各个系统之间的差异，提供了统一的接口，对于开发者而言，只要在不同的系统上安装对应的java虚拟机，编程时遵循java的规范，就可以实现在所有操作系统上运java程序了。 2.讲一下jav">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://nnnoneme.cn/2018/07/03/面试题整理/"/>
+
+
+
+
+
+  <title>面试题整理 | NNNoneMe's blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4d8cff1254ca2196f26cf7db87acf4be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">NNNoneMe's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            联系
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            历程
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nnnoneme.cn/2018/07/03/面试题整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NNNoneMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NNNoneMe's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试题整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T11:50:27+08:00">
+                2018-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="javaSE部分"><a href="#javaSE部分" class="headerlink" title="javaSE部分"></a>javaSE部分</h2><h4 id="1-简单讲一下java跨平台原理"><a href="#1-简单讲一下java跨平台原理" class="headerlink" title="1.简单讲一下java跨平台原理"></a>1.简单讲一下java跨平台原理</h4><p>由于各操作系统支持的指令集（或者是实现原理）不是完全一致的，就会让我们的程序在不同的的操作系统上执行不同的代码。java开发了使用与不同操作系统的java虚拟机来屏蔽各个系统之间的差异，提供了统一的接口，对于开发者而言，只要在不同的系统上安装对应的java虚拟机，编程时遵循java的规范，就可以实现在所有操作系统上运java程序了。</p>
+<h4 id="2-讲一下java中的int数据占据多少字节？（考察java基本数据类型）"><a href="#2-讲一下java中的int数据占据多少字节？（考察java基本数据类型）" class="headerlink" title="2.讲一下java中的int数据占据多少字节？（考察java基本数据类型）"></a>2.讲一下java中的int数据占据多少字节？（考察java基本数据类型）</h4><p>java提供了8种基本数据类型：</p>
+<p>整型：byte，short，int,long</p>
+<p>浮点型：float,double</p>
+<p>字符类型：char</p>
+<p>布尔类型：boolean</p>
+<p>int占32位，4个字节</p>
+<h4 id="3-面向对象的特征有哪方面（抽象问题，要举例说明）"><a href="#3-面向对象的特征有哪方面（抽象问题，要举例说明）" class="headerlink" title="3.面向对象的特征有哪方面（抽象问题，要举例说明）"></a>3.面向对象的特征有哪方面（抽象问题，要举例说明）</h4><p>封装：将 一个对象封装成一个高度自治和相对封闭的个体，对象的状态（属性）由该对象自己的行为（方法）来读取和改变。</p>
+<p>继承：在定义和实现一个类的时候，可以在一个已经存在的类的基础上来进行，把这个已经存在的类所定义的内容作为自己的内容，并且可以加入新的内容，或者修改原来的方法使其更时候特殊的需求，这就是继承。</p>
+<p>多态：多态是指程序中所定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行时期才确定，即一个引用变量到底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，必须在程序运行时期才能决定。</p>
+<p>抽象：抽象就是找出一些事物的相似和共性之处，然后将它们归为一个类，该类只考虑这些事物的相似和共性，忽略与当前目标无关的方面。</p>
+<h4 id="4-有了基本的数据类型，为什么还需要包装类型？"><a href="#4-有了基本的数据类型，为什么还需要包装类型？" class="headerlink" title="4.有了基本的数据类型，为什么还需要包装类型？"></a>4.有了基本的数据类型，为什么还需要包装类型？</h4><blockquote>
+<p>装箱：把基本的数据类型转换为对应的包装类型</p>
+<p>拆箱：把包装类型转换为基本数据类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">//jdk1.5后自动装箱：</span></span><br><span class="line">&gt; Integer i = <span class="number">10</span>;<span class="comment">//底层调用Integer.valueOf(10);这个方法</span></span><br><span class="line">&gt; <span class="comment">//jdk1.5后自动拆箱:</span></span><br><span class="line">&gt; <span class="keyword">int</span> j = i;<span class="comment">// 底层调用i.intValue();方法</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>java是一个面向对象的语言，而基本数据类型不具备面向对象的特性。</p>
+<blockquote>
+<p>举例：分别用Integer和int来表示Person类的ID，根据ID判断是否存在这个person时，包装类型只需要判断是否为空就行了</p>
+</blockquote>
+<h4 id="5-说说“-”和“equals方法有什么区别"><a href="#5-说说“-”和“equals方法有什么区别" class="headerlink" title="5.说说“==”和“equals方法有什么区别"></a>5.说说“==”和“equals方法有什么区别</h4><p>经典面试题，先说清楚一个，再来说另一个</p>
+<p>==：用来判断两个变量之间的值是否相等，变量可以分为基本数据类型和引用类型，基本数据类型直接比较值，而引用类型需要比较对应的引用的内存的首地址。</p>
+<p>equals：用来比较两个对象是否长得一样，判断两个对象的某些特征是否一样。比较两个对象就是调用对象的equals方法。在实际编码中，经常有需要重写equals方法。</p>
+<p>object类的equals方法源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-讲一下String、StringBuilder、StringBuffer的区别？"><a href="#6-讲一下String、StringBuilder、StringBuffer的区别？" class="headerlink" title="6.讲一下String、StringBuilder、StringBuffer的区别？"></a>6.讲一下String、StringBuilder、StringBuffer的区别？</h4><p>在java中，提供以上类来表示和操作字符串。字符串简单理解为就是多个字符的几个。</p>
+<p>String是内容不可变的字符串，因为其被final修饰。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="keyword">new</span> String(<span class="string">"aaaa"</span>);<span class="comment">// 不可改变了</span></span><br></pre></td></tr></table></figure>
+<p>StringBuilder、StringBuffer是内容可以被改变的字符串。底层没有使用final修饰。append方法可以实现字符串的拼接。</p>
+<p>字符串拼接：</p>
+<p>1.String进行拼接：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`String c = <span class="string">"a"</span> + <span class="string">"b"</span>;<span class="comment">//用了三个String对象来实现。</span></span><br></pre></td></tr></table></figure>
+<p>2.StringBuilder或者StringBuffer拼接：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">sb.append(<span class="string">"a"</span>);<span class="comment">//拼接字符串效率更高</span></span><br></pre></td></tr></table></figure>
+<p>StringBuilder是线程不安全，但效率高；StringBuffer线程安全，效率较低；</p>
+<h4 id="7-讲一下java中的集合"><a href="#7-讲一下java中的集合" class="headerlink" title="7.讲一下java中的集合"></a>7.讲一下java中的集合</h4><p>java中的集合分为value，key-value两种（Conllection,Map)</p>
+<p>存储值的有List和Set；存key-value的有Map；</p>
+<p>List是有序的，可以重复的；Set是无序的，不可以重复（根据equals和hashCode判断，对象如果要存在Set中，必须重写equals方法和hashCode方法。）</p>
+<h4 id="8-ArrayList和LinkedList的区别"><a href="#8-ArrayList和LinkedList的区别" class="headerlink" title="8.ArrayList和LinkedList的区别"></a>8.ArrayList和LinkedList的区别</h4><p>List常用的有ArrayList和LinkedList。</p>
+<p>ArrayList底层时数组实现，查询效率高，插入删除效率低；LinkedList使用的是链表结构，查询慢，删除插入效率高；故而前者用在查询比较多，插入和删除比较少的情况，后者适用于删除、插入多，查询相对较少的情况。</p>
+<blockquote>
+<p>数组具有索引，查询特定的元素比较快，而插入、删除、修改比较快，数组在内存中是一块连续的内存，插入或者删除时，需要移动内存。</p>
+<p>链表不要求内存是连续的，查询比较慢，插入、删除效率高。在当前元素中存放上一个或下一个元素的地址，查询时需要从头部开始，效率较低。插入时不需要移动内存，只需要改变引用指向即可。</p>
+</blockquote>
+<h4 id="9-讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？"><a href="#9-讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？" class="headerlink" title="9.讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？"></a>9.讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？</h4><p>相同点：HashMap和HashTable都可以来存相互key-value的数据。</p>
+<p>1.HashMap是可以把null作为key或value的，HashTable不行；</p>
+<p>2.HashMap线程不安，效率高；HashTable线程安全，效率较低；</p>
+<p>想线程安全，又想效率高，怎么办？CurrentMap（JDK1.5)</p>
+<p>通过把整个HashMap分为N个Segment（类似HashTable），可以提供相同的线程安全，效率却比HashMap提升了N倍。</p>
+<h4 id="10-实现一个拷贝文件的工具类使用字节流和字符流？"><a href="#10-实现一个拷贝文件的工具类使用字节流和字符流？" class="headerlink" title="10.实现一个拷贝文件的工具类使用字节流和字符流？"></a>10.实现一个拷贝文件的工具类使用字节流和字符流？</h4><p>拷贝文件不确定是只包含字符，有可能有字节（图片、声音、图像），考虑通用性，使用字节流。</p>
+<h4 id="11-线程的几种实现方式。"><a href="#11-线程的几种实现方式。" class="headerlink" title="11.线程的几种实现方式。"></a>11.线程的几种实现方式。</h4><p><strong>实现方式：</strong></p>
+<p>1.通过继承Thread类实现一个线程；</p>
+<p>2.通过实现Runnable接口实现一个线程；</p>
+<blockquote>
+<p>通过继承的扩展性不强，java中只支持单继承，如果一个类继承了Thread就不能继承其他的类了。</p>
+</blockquote>
+<p><strong>启动线程：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thread thread = <span class="keyword">new</span> Thread(传入一个继承类的对象或者实现接口的对象);</span><br><span class="line">thread.start();<span class="comment">// 启动线程，执行时调用run方法</span></span><br></pre></td></tr></table></figure>
+<p><strong>怎么区分线程？</strong></p>
+<p>例子：在一个系统中有很多线程，每个线程都会打印日志，我想区分是哪个线程打印的日志？</p>
+<p>答：规范：创建线程完成户标志线程(设置线程名)<code>thread.setName(&quot;t1&quot;);</code></p>
+<h4 id="12-有没有使用线程并发库？"><a href="#12-有没有使用线程并发库？" class="headerlink" title="12.有没有使用线程并发库？"></a>12.有没有使用线程并发库？</h4><p>简单了解过，JDK1.5增加的并发库。提供了对线程优化、管理的各项操作，使得线程的使用变得得心应手。如提供了线程的运行，线程池的创建，线程生命周期的控制。</p>
+<h4 id="13-讲一下什么是设计模式，和常用的设计模式？"><a href="#13-讲一下什么是设计模式，和常用的设计模式？" class="headerlink" title="13.讲一下什么是设计模式，和常用的设计模式？"></a>13.讲一下什么是设计模式，和常用的设计模式？</h4><p>设计模式就是经过前人无数次的实践总结出的，在设计过程中可以反复使用的、可以解决特定的问题的设计方法。</p>
+<p><strong>单例（饱汉/饥汉）：</strong></p>
+<p>1.构造方法私有化，除了自己类中能创建外，其他地方不能创建；</p>
+<p>2.在自己类中创建一个单实例（饱汉模式是一出来就创建单实例，饥汉模式需要时才创建）；</p>
+<p>3.提供一个方法获取该实例对象（创建时需要进行方法同步）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//饱汉模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonFactory</span></span>&#123;</span><br><span class="line">    <span class="comment">// 构造方法私有化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">PersonFactory</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> PersonFactory instance = <span class="keyword">new</span> PersonFactory();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 提供方法获取</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PersonFactory <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 饥汉模式</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonFactory</span></span>&#123;</span><br><span class="line">    <span class="comment">// 构造方法私有化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">PersonFactory</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> PersonFactory instance = <span class="keyword">new</span> PersonFactory();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 提供方法获取</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> PersonFactory <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> PersonFactory();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>工厂模式：Spring的IOC就是使用了工厂模式</p>
+<p>对象的创建交给一个工厂去创建。</p>
+<p>代理模式：Spring AOP就是使用的动态代理</p>
+<h2 id="javaWeb部分"><a href="#javaWeb部分" class="headerlink" title="javaWeb部分"></a>javaWeb部分</h2><h4 id="1-讲一下http-GET和POST请求的区别？"><a href="#1-讲一下http-GET和POST请求的区别？" class="headerlink" title="1.讲一下http GET和POST请求的区别？"></a>1.讲一下http GET和POST请求的区别？</h4><p>GET和POST请求都是http的提交方式，用户通过不同http的提交方式完成对资源的操作。具体来讲GET一般用于<code>查询/获取</code>资源信息，而POST一般用于<code>更新</code>资源信息。</p>
+<p>http定义了与服务器交互的不同方式，基本的方法有4中，分别就是GET,POST,PUT,DELET它们对应着对信息资源的查、改、增、删4个操作。</p>
+<p>1.GET请求提交的数据会在地址栏显示出来，而POST请求不会在地址栏显示出来。</p>
+<p>GET提交，请求数据会附加在URL之后，以<code>?</code>分割URL和传输数据，多个参数用<code>&amp;</code>连接;POST提交：把提交的数据防止在http请求包的包体中。</p>
+<p>2.数据传输的大小</p>
+<p>在http协议中，GET请求由于浏览器对URL长度的限制导致传输的数据有限制，而POST请求没有这一限制。</p>
+<p>3.安全性</p>
+<p>POST提交方式的安全性比GET提交方式高。因为GET的数据是在地址中显示出来的，可以通过历史记录来找到密码等敏感信息。</p>
+<h4 id="2-说一下你对servlet的理解？"><a href="#2-说一下你对servlet的理解？" class="headerlink" title="2.说一下你对servlet的理解？"></a>2.说一下你对servlet的理解？</h4><p>是用java编写的服务器端程序。这些servlet都要事先Servlet接口。其主要功能是在于交互式的浏览和修改数据，生成动态Web内容。</p>
+<p>HttpServlet重写doGet和doPost方法或者重写service方法完成催get和post请求的响应。</p>
+<h4 id="3-简单说一下servlet的生命周期？"><a href="#3-简单说一下servlet的生命周期？" class="headerlink" title="3.简单说一下servlet的生命周期？"></a>3.简单说一下servlet的生命周期？</h4><p>servlet具有良好的生存周期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生成周期由Servlet接口中的init,service和destroy方法表达。</p>
+<p>Servlet启动时，Servlet生命周期开始。Servlet被服务器实例化后，容器运行其init方法，请求到达时运行其service方法，service方法自动派遣运行与请求对应的doGet/doPost方法等，当服务器销毁Servlet实例的时候或者服务器关闭调用destroy方法。</p>
+<p>具体流程：</p>
+<p>加载Servlet的class–&gt;实例化Servlet–&gt;调用Servlet的init方法–&gt;响应请求（service方法处理）–&gt;Servlet容器关闭（destroy方法）</p>
+<h4 id="4-Servlet中forward-和redirect-的区别？"><a href="#4-Servlet中forward-和redirect-的区别？" class="headerlink" title="4.Servlet中forward()和redirect()的区别？"></a>4.Servlet中forward()和redirect()的区别？</h4><p>前者仅是<code>容器中控制权的转向</code>，在客户端浏览器地址中不会显示转向后的地址；后者则是跳转，浏览器将会得到跳转的地址，并且重新发送请求，从浏览器地址可以看到跳转后的地址。所以前者更加高效。而且利于隐藏实际链接。但是在有些情况下，需要跳转到其他服务器上的资源，必须用后者。</p>
+<h4 id="5-JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？"><a href="#5-JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？" class="headerlink" title="5.JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？"></a>5.JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？</h4><p>相同点：</p>
+<p>JSP是Servlet技术的扩展，所有的jsp文件都会被翻译为一个继承HttpServlet的类。也就是说JSP最终就是Servlet。</p>
+<p>不同点：</p>
+<p>Servlet是应用在java文件当中的，并且完全从html里分离开来。</p>
+<p>而JSP是java和html可以组合成一个jsp文件。</p>
+<p>JSP侧重视图，Servlet侧重控制逻辑。</p>
+<h4 id="6-JSP中的内置对象？各有什么作用？有什么方法？"><a href="#6-JSP中的内置对象？各有什么作用？有什么方法？" class="headerlink" title="6.JSP中的内置对象？各有什么作用？有什么方法？"></a>6.JSP中的内置对象？各有什么作用？有什么方法？</h4><p>9个内置对象，分别为：</p>
+<p>​    request:客户端的请求，此请求会包含来自get/post请求的参数</p>
+<p>​    response:服务器传回到客户端的回应</p>
+<p>​    pageContext:网页的属性在此对象中管理</p>
+<p>​    session:与请求相关的会话对象</p>
+<p>​    application:servlet正在执行的内容</p>
+<p>​    out:用来传送回应的输出对象</p>
+<p>​    config:servlet不呢是的架构组件</p>
+<p>​    page:jsp网页本身</p>
+<p>​    exception:针对错误页面，未捕捉的例外</p>
+<p>四大作用域：<code>pageContext</code> <code>request</code> <code>session</code> <code>application</code>，可以通过jstl从作用域中获取需要的值。</p>
+<p>JSP传值：<code>pageContext</code> <code>request</code> <code>session</code> <code>cookie</code>均可传值</p>
+<h4 id="7-说一下session和cookie的区别"><a href="#7-说一下session和cookie的区别" class="headerlink" title="7.说一下session和cookie的区别"></a>7.说一下session和cookie的区别</h4><p>session和cookie都是会话跟踪技术。cookie数通过在客户端记录信息确定用户身份，session通过在服务器端记录信息确定用户身份。但是session的实现依赖于cookie（sessionId是session的唯一标识，需要存放在客户端）</p>
+<p>cookie和session的区别：</p>
+<p>1.cookie数据存放在客户的浏览器上，session数据存放在服务器中。</p>
+<p>2.cookie不是很安全，别人可以分析存放在本地的cookie，进行cookie欺骗。</p>
+<p>3.减轻服服务器性能，可以使用cookie。</p>
+<p>4.单个cookie保存的数据不能超过4K,很多浏览器都限制一个站点最多保存20个cookie</p>
+<blockquote>
+<p>购物车的实现最好使用cookie，但是cookie是可以在客户端禁用的，这时候，我们要使用cookie+数据库的方式实现，当从cookie中不能取出数据时，就从数据库中获取</p>
+</blockquote>
+<h4 id="8-MVC的各个部分都由哪些技术来实现？"><a href="#8-MVC的各个部分都由哪些技术来实现？" class="headerlink" title="8.MVC的各个部分都由哪些技术来实现？"></a>8.MVC的各个部分都由哪些技术来实现？</h4><p>M(Model)模型：javabean</p>
+<p>V(View)视图：html jsp等</p>
+<p>C(Control)控制器：servlet</p>
+<h2 id="数据库部分"><a href="#数据库部分" class="headerlink" title="数据库部分"></a>数据库部分</h2><h4 id="1-数据库分类"><a href="#1-数据库分类" class="headerlink" title="1.数据库分类"></a>1.数据库分类</h4><p>数据库分为关系型数据库个非关系型数据库</p>
+<p>关系型：mysql oracle sqlserver等</p>
+<p>非关系型：redis memcache mogodb hadoop等</p>
+<h4 id="2-简单介绍一下关系型数据库的三大范式？"><a href="#2-简单介绍一下关系型数据库的三大范式？" class="headerlink" title="2.简单介绍一下关系型数据库的三大范式？"></a>2.简单介绍一下关系型数据库的三大范式？</h4><p>范式就是规范，关系型数据库在设计表时，需要遵循的三个规范。</p>
+<p>第一范式：指数据表中的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。<code>列的数据不可分割</code>。</p>
+<p>第二范式：要求数据表中的每一行必须可以被唯一的区分。为实现区分通常需要为表加上一个列，用以存储各个实例的唯一标识（主键）。</p>
+<p>第三范式：要求一个数据表中不能包含已经在其他表中已经包含的非主键关键字信息（外键）。</p>
+<h4 id="3-事务四个基本特性"><a href="#3-事务四个基本特性" class="headerlink" title="3.事务四个基本特性"></a>3.事务四个基本特性</h4><p>事务是并发控制的单位，用户定义一个操作序列。这些操作要么都做，要么都不做，是一个不可分割的工作单位。</p>
+<p>比如：一个转账必须A账号扣钱成功，B账号加钱成功，才算真正的转账成功。</p>
+<p>事务必须满足四大特征：原子性，一致性，隔离性，持久性</p>
+<p>原子性：表示事务内部不可分割，要么都成功，要么都失败。</p>
+<p>一致性：要么都成功，要么都失败，失败后要对前面的操作进行回滚。</p>
+<p>隔离性：一个事务开始后，不能被其他事务干扰。</p>
+<p>持久性：事务开始了，就不能终止。</p>
+<h4 id="4-说一下mysql和oracle分页实现"><a href="#4-说一下mysql和oracle分页实现" class="headerlink" title="4.说一下mysql和oracle分页实现"></a>4.说一下mysql和oracle分页实现</h4><p>mysql是使用关键字limit来进行分页的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from students order by id limit 0,4</span><br></pre></td></tr></table></figure>
+<p>oracle是使用三层嵌套查询来实现的</p>
+<h4 id="5-简单讲一下数据库的触发器的使用场景"><a href="#5-简单讲一下数据库的触发器的使用场景" class="headerlink" title="5.简单讲一下数据库的触发器的使用场景"></a>5.简单讲一下数据库的触发器的使用场景</h4><p>触发器，需要有触发条件，当条件满足后做什么操作。</p>
+<p>触发器的用处有很多，比如一些网站，发布一个日志，自动通知好友，其实就是在增加日志时做一个后触发，再向通知表中写入条目。</p>
+<h4 id="6-简单讲一下数据库的存储过程的使用场景"><a href="#6-简单讲一下数据库的存储过程的使用场景" class="headerlink" title="6.简单讲一下数据库的存储过程的使用场景"></a>6.简单讲一下数据库的存储过程的使用场景</h4><p>数据库存储过程具有如下有点：</p>
+<p>1.存储过程只在创建时进行编译，以后每次执行存储过程都不需要重新编译，而一般的sql语句每执行一次就编译一次，因此使用存储过程可以大大提高数据库执行速度。</p>
+<p>2.通常，复杂的业务逻辑需要多条sql语句。这些语句要分别从客户机发送到服务器，当客户机和服务器之间的操作很多时，将会产生大量的网络传输。如果将这些操作放在一个存储过程中，那么客户机和服务器之间的网络传输就会大大减少，降低了网络负载。</p>
+<p>3.存储过程创建一次便可以重复使用，从而减少数据库开发人员的工作量。</p>
+<p>4.安全性高，存储过程可以屏蔽对底层数据库对象的直接访问，使用EXCUTE权限调用存储过程，无需拥有访问底层数据库对象的显示权限。</p>
+<h4 id="7-说说你对jdbc的理解"><a href="#7-说说你对jdbc的理解" class="headerlink" title="7.说说你对jdbc的理解"></a>7.说说你对jdbc的理解</h4><p>java database connection 数据库连接，数据库管理系统有很多，每个数据库管理系统支持的命令不是一样的。</p>
+<p>java中只定义了接口，让数据库厂商自己实现接口，对我们而言，只需要导入对应厂商开发的实现即可。</p>
+<h4 id="8-JDBC中的PreparedStatement相比Statement的好处"><a href="#8-JDBC中的PreparedStatement相比Statement的好处" class="headerlink" title="8.JDBC中的PreparedStatement相比Statement的好处"></a>8.JDBC中的PreparedStatement相比Statement的好处</h4><p>大多情况下我们都是用PreparedStatement代替Statement，理由如下</p>
+<p>1.PreparedStatement是预编译的，比Statement速度快；</p>
+<p>2.代码的可读性和可维护性更高，可以使用占位符；</p>
+<p>3.安全性：PreparedStatement可以繁殖SQL注入攻击，而Statement却不能。</p>
+<h4 id="9-数据库连接池的作用"><a href="#9-数据库连接池的作用" class="headerlink" title="9.数据库连接池的作用"></a>9.数据库连接池的作用</h4><p>1.限定数据库连接的个数，不会导致由于数据库连接过多而导致系统运行缓慢或者崩溃；</p>
+<p>2.数据库连接不不需要每次都去创建或者销毁，为我们节约了资源；</p>
+<p>3.数据库连接不需要每次都去创建，响应时间更快</p>
+<h2 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h2><h4 id="1-简单介绍一下ajax"><a href="#1-简单介绍一下ajax" class="headerlink" title="1.简单介绍一下ajax"></a>1.简单介绍一下ajax</h4><p>ajax就是一部的JavaScript和xml，其主要作用就是通过ajax与服务器进行异步通信，可以实现网页的局部更新。</p>
+<p>我们可以通过XmlHttpRequest对象来实现ajax，使用这个对象可以异步的想向服务器发送请求，获取响应，完成局部更新。</p>
+<p>常见使用场景：登录失败时不跳转页面，注册时提示用户名已存在，二级联动等等</p>
+<h4 id="2-js和jQuery的关系"><a href="#2-js和jQuery的关系" class="headerlink" title="2.js和jQuery的关系"></a>2.js和jQuery的关系</h4><p>jQuery是一个js的框架，封装了js的属性和方法，对js进行了部分封装，并且增强了js 的功能。在使用的时候，我们可以混合使用。jQuery在操作dom对象时更加灵活方便。</p>
+<h4 id="3-简单说一下html5，你对现在html5哪些新技术有了解？"><a href="#3-简单说一下html5，你对现在html5哪些新技术有了解？" class="headerlink" title="3.简单说一下html5，你对现在html5哪些新技术有了解？"></a>3.简单说一下html5，你对现在html5哪些新技术有了解？</h4><p>html5是最新版的html，是原来html4的基础上增加了一些标签。</p>
+<p>html5增加了一些像画板，声音，视频等高级功能。</p>
+<h2 id="框架部分"><a href="#框架部分" class="headerlink" title="框架部分"></a>框架部分</h2><p>1.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/25/秒杀API实现/" rel="next" title="Java高并发秒杀系统API实现">
+                <i class="fa fa-chevron-left"></i> Java高并发秒杀系统API实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/image/avatar.jpg"
+                alt="NNNoneMe" />
+            
+              <p class="site-author-name" itemprop="name">NNNoneMe</p>
+              <p class="site-description motion-element" itemprop="description">Be Better!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javaSE部分"><span class="nav-number">1.</span> <span class="nav-text">javaSE部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-简单讲一下java跨平台原理"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.简单讲一下java跨平台原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-讲一下java中的int数据占据多少字节？（考察java基本数据类型）"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.讲一下java中的int数据占据多少字节？（考察java基本数据类型）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-面向对象的特征有哪方面（抽象问题，要举例说明）"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.面向对象的特征有哪方面（抽象问题，要举例说明）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-有了基本的数据类型，为什么还需要包装类型？"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.有了基本的数据类型，为什么还需要包装类型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-说说“-”和“equals方法有什么区别"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.说说“==”和“equals方法有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-讲一下String、StringBuilder、StringBuffer的区别？"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.讲一下String、StringBuilder、StringBuffer的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-讲一下java中的集合"><span class="nav-number">1.0.7.</span> <span class="nav-text">7.讲一下java中的集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-ArrayList和LinkedList的区别"><span class="nav-number">1.0.8.</span> <span class="nav-text">8.ArrayList和LinkedList的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？"><span class="nav-number">1.0.9.</span> <span class="nav-text">9.讲一下HashMap和HashTable的区别？HashTable和CurrentMap的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-实现一个拷贝文件的工具类使用字节流和字符流？"><span class="nav-number">1.0.10.</span> <span class="nav-text">10.实现一个拷贝文件的工具类使用字节流和字符流？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-线程的几种实现方式。"><span class="nav-number">1.0.11.</span> <span class="nav-text">11.线程的几种实现方式。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-有没有使用线程并发库？"><span class="nav-number">1.0.12.</span> <span class="nav-text">12.有没有使用线程并发库？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-讲一下什么是设计模式，和常用的设计模式？"><span class="nav-number">1.0.13.</span> <span class="nav-text">13.讲一下什么是设计模式，和常用的设计模式？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javaWeb部分"><span class="nav-number">2.</span> <span class="nav-text">javaWeb部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-讲一下http-GET和POST请求的区别？"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.讲一下http GET和POST请求的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-说一下你对servlet的理解？"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.说一下你对servlet的理解？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-简单说一下servlet的生命周期？"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.简单说一下servlet的生命周期？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Servlet中forward-和redirect-的区别？"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.Servlet中forward()和redirect()的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？"><span class="nav-number">2.0.5.</span> <span class="nav-text">5.JSP和Servlet有哪些相同点和不同点，他们之间有什么联系？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-JSP中的内置对象？各有什么作用？有什么方法？"><span class="nav-number">2.0.6.</span> <span class="nav-text">6.JSP中的内置对象？各有什么作用？有什么方法？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-说一下session和cookie的区别"><span class="nav-number">2.0.7.</span> <span class="nav-text">7.说一下session和cookie的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-MVC的各个部分都由哪些技术来实现？"><span class="nav-number">2.0.8.</span> <span class="nav-text">8.MVC的各个部分都由哪些技术来实现？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库部分"><span class="nav-number">3.</span> <span class="nav-text">数据库部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据库分类"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.数据库分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-简单介绍一下关系型数据库的三大范式？"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.简单介绍一下关系型数据库的三大范式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-事务四个基本特性"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.事务四个基本特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-说一下mysql和oracle分页实现"><span class="nav-number">3.0.4.</span> <span class="nav-text">4.说一下mysql和oracle分页实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-简单讲一下数据库的触发器的使用场景"><span class="nav-number">3.0.5.</span> <span class="nav-text">5.简单讲一下数据库的触发器的使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-简单讲一下数据库的存储过程的使用场景"><span class="nav-number">3.0.6.</span> <span class="nav-text">6.简单讲一下数据库的存储过程的使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-说说你对jdbc的理解"><span class="nav-number">3.0.7.</span> <span class="nav-text">7.说说你对jdbc的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-JDBC中的PreparedStatement相比Statement的好处"><span class="nav-number">3.0.8.</span> <span class="nav-text">8.JDBC中的PreparedStatement相比Statement的好处</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-数据库连接池的作用"><span class="nav-number">3.0.9.</span> <span class="nav-text">9.数据库连接池的作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端部分"><span class="nav-number">4.</span> <span class="nav-text">前端部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-简单介绍一下ajax"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.简单介绍一下ajax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-js和jQuery的关系"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.js和jQuery的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-简单说一下html5，你对现在html5哪些新技术有了解？"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.简单说一下html5，你对现在html5哪些新技术有了解？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架部分"><span class="nav-number">5.</span> <span class="nav-text">框架部分</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NNNoneMe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
